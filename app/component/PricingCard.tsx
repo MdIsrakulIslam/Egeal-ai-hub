@@ -43,7 +43,7 @@ export const packages: Package[] = [
     id: 3,
     title: 'White House Package',
     price: '$20,000',
-    badge: 'Elite access for founders ready to lead and build their AI ,empire.',
+    badge: 'Elite access for founders ready to lead and build their AI empire',
      benifits: 'What you get:',
     features: [
       'Private chats with AI founders and investors',
@@ -83,7 +83,7 @@ export default function PricingCard() {
           )}
           <div className="text-[px] font-bold text-[20px] mb-1">{pack.price}</div>
           {pack.badge && (
-            <div className="text-sm font-bold mb-2">({pack.badge})</div>
+            <div className="text-sm font-semibold mb-2">({pack.badge})</div>
           )}
           <p className="text-white mb-5 text-[12px]">{pack.description}</p>
           <div className=''>
