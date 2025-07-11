@@ -85,7 +85,7 @@ const StrategyGrid: React.FC<StrategyGridProps> = ({
     {/* Item Title */}
     <div className="flex items-center justify-center md:justify-start mb-2 sm:mb-3 mt-14 sm:pl-6">
   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full mr-2 sm:mr-3 lg:mr-4"></div>
-  <h2 className="text-[16px] font-medium leading-[26.25px] text-white">
+  <h2 className="text-[20px] font-medium leading-[26.25px] text-white">
     {item.title}
   </h2>
 </div>
@@ -95,7 +95,7 @@ const StrategyGrid: React.FC<StrategyGridProps> = ({
     
 
     {/* Item Details — hidden on small */}
-    <div className="hidden md:block ml-4 sm:ml-6 lg:ml-10 mt-14">
+    <div className="hidden md:block ml-4 sm:ml-6 lg:ml-10 mt-1">
   {item.details.map((detail, detailIndex) => (
     <p key={detailIndex} className="text-[16px] font-medium leading-[26.25px] text-white sm:mb-2 lg:ml-4">
       {detail}
