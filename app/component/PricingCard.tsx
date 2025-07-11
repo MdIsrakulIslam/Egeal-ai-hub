@@ -1,10 +1,12 @@
 import React from 'react'
 import { Package } from '../pricingdata/PricingData'
+import { IoMdCheckmark } from 'react-icons/io'
 
 export const packages: Package[] = [
   {
     id: 1,
     title: 'Beginner Package Boot camp',
+    crossprice: '100',
     price: '$99',
     badge: '50% off',
     description: 'Get in early. Start building your AI empire.',
@@ -17,7 +19,8 @@ export const packages: Package[] = [
       'AI job boards and early job alerts',
       'Access to AI pitch decks & templates for fast, effective fundraising',
     ],
-    note: 'Over $1000+ in value — all for just $99. 3 days trial in $1',
+    note: 'Over $1000+ in value — all for just $99.',
+    para:' 3 days trial in $1'
   },
   {
     id: 2,
@@ -59,22 +62,32 @@ export default function PricingCard() {
   return (
   <div className="bg-black text-white flex flex-col items-center justify-center p-8">
   <h1 className="text-3xl font-bold mb-6 mt-4">Pricing Options</h1>
-  <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-8">
+  <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-8 ">
     {packages.map((pack) => (
       <div
         key={pack.id}
-        className="border border-gray-700 p-6 rounded-xl flex flex-col bg-neutral-900 w-[389.33px] h-full"
+        className="border border-[#D10800] p-6 rounded-xl flex flex-col bg-neutral-900 w-[389.33px] h-full "
       >
         {/* Top content */}
         <div>
           <h2 className="text-[20px] font-bold mb-2">{pack.title}</h2>
-          <div className="text-[32px] font-extrabold mb-1">{pack.price}</div>
-          {pack.badge && (
-            <div className="text-sm font-semibold mb-4">{pack.badge}</div>
+          {pack .crossprice && (
+            <div className='flex gap-1'>
+            <div className=" text-sm text-white line-through mb-2 flex">
+              {pack.crossprice} 
+              </div>
+              <div>
+                $
+              </div>
+              </div>
           )}
-          <p className="text-gray-300 mb-10 text-[20px]">{pack.description}</p>
-          <div className='mt-auto'>
-            <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded">
+          <div className="text-[px] font-bold text-[20px] mb-1">{pack.price}</div>
+          {pack.badge && (
+            <div className="text-sm font-semibold mb-2">({pack.badge})</div>
+          )}
+          <p className="text-white mb-5 text-[12px]">{pack.description}</p>
+          <div className=''>
+            <button className="w-full bg-[#D10800] hover:bg-red-700 text-white  py-2 rounded text-center justify-center mt-1.5">
             Get started
           </button>
           </div>
@@ -86,7 +99,7 @@ export default function PricingCard() {
           <ul className="space-y-2 text-sm mb-4">
             {pack.features.map((feature, idx) => (
               <li key={idx} className="flex gap-2 items-start">
-                <span className="text-green-400">✔️</span>
+                <span className="text-[#D10800]"><IoMdCheckmark className='text-2xl' /></span>
                 <span>{feature}</span>
               </li>
             ))}
@@ -94,12 +107,12 @@ export default function PricingCard() {
         </div>
 
         {/* Bottom section — pinned to bottom */}
-        <div className="mt-auto space-y-2">
+        <div className="">
          
           {pack.note && (
             <p className="text-xs text-center">{pack.note}</p>
           )}
-          <p className="text-red-500 text-center">3 days trial in $1</p>
+          <p className="text-red-500 text-center pt-5">{pack.para}</p>
         </div>
       </div>
     ))}

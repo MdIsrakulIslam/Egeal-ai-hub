@@ -74,7 +74,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-black border border-[#D10800]  rounded-lg  sm:p-6 hover:border-gray-700 transition-colors duration-300 lg:w-[521px] lg:h-[180px] lg:top-[2887px] lg:left-[175px] "
+              className="bg-black border border-[#D10800]  rounded-lg  sm:p-4 hover:border-gray-700 transition-colors duration-300 lg:w-[521px] lg:h-[180px] lg:top-[2887px] lg:left-[175px] "
             >
               {/* Stars */}
               <div className="flex items-center  mb-2 pl-2">
