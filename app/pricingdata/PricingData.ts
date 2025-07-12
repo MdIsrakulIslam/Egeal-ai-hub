@@ -7,6 +7,7 @@ export type Package = {
   description: string
   benifits?: string
   features: string[]
+  note1?: string
   note?: string
   para?: string
 }

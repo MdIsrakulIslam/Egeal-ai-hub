@@ -1,6 +1,19 @@
 import React from 'react'
-import { Package } from '../pricingdata/PricingData'
 import { IoMdCheckmark } from 'react-icons/io'
+
+type Package = {
+  id: number
+  title: string
+  crossprice?: string
+  price: string
+  badge?: string
+  description: string
+  benifits: string
+  features: string[]
+  note1?: string
+  note?: string
+  para?: string
+}
 
 export const packages: Package[] = [
   {
@@ -12,15 +25,18 @@ export const packages: Package[] = [
     description: 'Get in early. Start building your AI empire.',
     benifits: 'What you get:',
     features: [
-      'Access to the Warrior Room — discover upcoming AI founders and AI resources',
-      'Unlock power tools, apps, and AI services before others',
-      'Exclusive training modules & mini-courses',
-      'AI-powered templates and frameworks',
-      'AI job boards and early job alerts',
-      'Access to AI pitch decks & templates for fast, effective fundraising',
+      'Access to the Warrior Room — discover upcoming AI tools before they blow up',
+      'Limited use of powerful AI bots — test and automate your first AI workflows',
+      'Opportunity to apply as an influencer and grow your reach',
+      'Exclusive training modules & mini-courses — quick, actionable strategies to make money with AI',
+      'Weekly insider AI tips and project alerts to stay ahead of the game',
+      'Access to a private VIP community — network, ask questions, and get support',
+      'Bot usage cheatsheets & templates for fast, effective results',
+      'Monthly group Q&A or AMA sessions with Marshall or the team',
+      'Early access and discounts on upcoming features and upgrades',
     ],
     note: 'Over $1000+ in value — all for just $99.',
-    para:' 3 days trial in $1'
+    para: '3 days trial in $1',
   },
   {
     id: 2,
@@ -28,14 +44,15 @@ export const packages: Package[] = [
     price: '$199',
     badge: '50% discount real price',
     description: 'For founders and creators ready to dominate the AI game.',
-     benifits: 'What you get:',
+    benifits: 'What you get:',
     features: [
-      'Access to the Warrior Room with early access to AI resources',
-      'Apply as an AI advisor, founder or investor',
-      'Regular updates and AI job matching',
-      'Exclusive AI training videos and resources',
-      'Access to private AI community channels',
-      'AI pitch decks, investor lists & contracts',
+      'Full access to the Warrior Room with exclusive early releases of the hottest AI tools',
+      'Priority opportunity to apply as an influencer and grow your network',
+      'Regular updates and insider drops on new AI projects and money-making strategies',
+      'Step-by-step monetization guides and tutorials to help you maximize every tool',
+      'Access to the private VIP community for support, networking, and collaboration',
+      'Monthly live group Q&A and coaching sessions with Marshall and experts',
+      'Early access and exclusive discounts on all new features and tools',
     ],
     note: 'Over $10000+ in value — all for just $199.',
   },
@@ -44,83 +61,97 @@ export const packages: Package[] = [
     title: 'White House Package',
     price: '$20,000',
     badge: 'Elite access for founders ready to lead and build their AI empire',
-     benifits: 'What you get:',
+    description: ' ',
+    benifits: 'What you get:',
     features: [
-      'Private chats with AI founders and investors',
-      'Priority AI job matching',
-      'Exclusive contracts, fundraising templates',
-      'Private mastermind groups',
-      'VIP invites to AI events',
-      'Access to elite AI tools and networks',
+      'Private calls with AI founders and industry leaders',
+      'Investor introductions (no funding guarantees)',
+      'Custom AI built for your business, free of charge',
+      'Priority to join our exclusive core team',
+      'Unlimited access to all courses and training',
+      '1-on-1 coaching with Marshall for personalized growth',
+      'VIP invites to masterminds and exclusive events',
+      'Priority early access to new AI tools and features',
+      'Early access to new AI tools and features',
+      'Tailored growth and monetization strategy',
     ],
+    note1:'For serious founders ready to dominate the AI space.',
     note: 'Over $100k+ in value — all for just $20k.',
   },
 ]
 
-
 export default function PricingCard() {
   return (
-  <div className="bg-black text-white flex flex-col items-center justify-center p-8">
-  <h1 className="text-3xl font-bold mb-6 mt-4">Pricing Options</h1>
-  <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-8 ">
-    {packages.map((pack) => (
-      <div
-        key={pack.id}
-        className="border border-[#D10800] p-6 rounded-xl flex flex-col bg-neutral-900 w-[389.33px] h-full "
-      >
-        {/* Top content */}
-        <div className='flex  flex-col justify-between h-full'>
-          <div>
+    <div className="bg-black text-white flex flex-col items-center justify-center p-8">
+      <h1 className="text-3xl font-bold mb-8">Pricing Options</h1>
+      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-8 ">
+        {packages.map((pack) => (
+          <div
+            key={pack.id}
+            className="border border-[#D10800] p-6  flex flex-col bg-neutral-900 md:w-[389px] md:h-[996px] w-[300px] h-[996px] pt-[24px] pb-[16px] pr-[16px] pl-[10px] gap-[18px] rounded-xl  "
+          >
+           <div className='md:w-[314px] md:h-[183px]  text-[32px] pr-5 '>
 
-            <h2 className="text-[20px] font-bold mb-2">{pack.title}</h2>
-          {pack .crossprice && (
-            
-            <div className=" text-sm text-red-500 line-through mb-2 flex">
-              {pack.crossprice}$
+             <h2 className="w-[286px] h-[23px] font-bold mb-2 text-[20px]">{pack.title}</h2>
+
+           
+
+           <div className='w-[298px] md:h-[79px] h-[136px] pr-[8px] text-[32px] gap-[17px] mt-8'>
+             {/* Cross price */}
+            {pack.crossprice && (
+              <div className=" font-bold text-[20px] text-white line-through decoration-[#D10800] mb-1 ">
+                {pack.crossprice}$
               </div>
-              
-            
-          )}
-          <div className="text-[px] font-bold text-[20px] mb-1">{pack.price}</div>
-          {pack.badge && (
-            <div className="text-sm font-semibold mb-2">({pack.badge})</div>
-          )}
-          <p className="text-white mb-5 text-[12px]">{pack.description}</p>
-          <div className=''>
-            <button className="w-full bg-[#D10800] hover:bg-red-700 text-white font-semibold py-2 rounded text-center justify-center mt-1.5">
-            Get started
-          </button>
-          </div>
-          </div>
+            )}
+             {/* Main price */}
+            <div className=" font-bold mb-1">{pack.price}</div>
 
-          <div>
+            {/* Badge */}
+            {pack.badge && (
+              <div className=" text-[20px] font-bold mb-2 ">({pack.badge})</div>
+            )}
 
-            {/* Features and Benefits */}
-          {pack.benifits && (
-            <p className="text-sm mb-3 mt-3">{pack.benifits}</p>
-          )}
-          <ul className="space-y-2 text-sm mb-4">
-            {pack.features.map((feature, idx) => (
-              <li key={idx} className="flex gap-2 items-start">
-                <span className="text-[#D10800]"><IoMdCheckmark className='text-2xl' /></span>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
+            <p className="text-sm text-white mb-5">{pack.description}</p>
+           </div>
+
+           </div>
+            {/* Button */}
+            <button className="md:w-[357.33px] h-[42px] text-[16px]  bg-[#D10800] hover:bg-red-700 text-white font-semibold py-2 rounded mb-4 md:mt-10 mt-[40px]">
+              Get started
+            </button>
+
+            {/* Benefits */}
+            <p className="text-base font-semibold mb-3">{pack.benifits}</p>
+
+            {/* Features */}
+            <ul className="space-y-2 text-sm mb-4">
+              {pack.features.map((feature, idx) => (
+                <li key={idx} className="flex gap-2 items-start ">
+                  <IoMdCheckmark className="text-[#D10800] text-xl mt-0.5" />
+                  <span className='text-[#FFFFFF]'>{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Bottom notes */}
+            <div className=" ">
+              <div>
+                {pack.note && (
+                <p className="md:[333px] md:[95px] text-[16px] font-semibold text-center mb-2 md:ml-5">{pack.note1}</p>
+
+             
+              )}
+                 {pack.note && (
+                <p className="text-[16px] font-semibold text-center mb-2">{pack.note}</p>
+                 )}
+              </div>
+              {pack.para && (
+                <p className="text-red-500 md:text-center text-[20px] font-semibold mt-2 pb-7">{pack.para}</p>
+              )}
+            </div>
           </div>
-        </div>
-
-        {/* Bottom section — pinned to bottom */}
-        <div className="">
-         
-          {pack.note && (
-            <p className="text-xs text-center">{pack.note}</p>
-          )}
-          <p className="text-red-500 text-center pt-5">{pack.para}</p>
-        </div>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
+    </div>
   )
 }
