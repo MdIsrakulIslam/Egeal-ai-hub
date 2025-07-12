@@ -62,19 +62,19 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
   };
 
   return (
-    <div className="bg-black min-h-screen text-white py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className=" py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="">
         {/* Title */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16">
           {title}
         </h2>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl  mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-4 sm:gap-6 lg:gap-8 ">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-black border border-[#D10800]  rounded-lg  sm:p-4 hover:border-gray-700 transition-colors duration-300 lg:w-[521px] lg:h-[180px] lg:top-[2887px] lg:left-[175px] "
+              className="bg-black border border-[#D10800]  rounded-lg  sm:p-4 hover:border-gray-700 transition-colors duration-300  "
             >
               {/* Stars */}
               <div className="flex items-center  mb-2 pl-2">
@@ -82,7 +82,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
               </div>
 
               {/* Review Text */}
-              <p className="text-[#FFFFFF] mb-4 font-normal text-[15px] leading-[24px] tracking-[0px] ">
+              <p className="text-[#FFFFFF] mb-4 font-normal text-[15px] leading-[24px] ">
                 "{review.text}"
               </p>
 
