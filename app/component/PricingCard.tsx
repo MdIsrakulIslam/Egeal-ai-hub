@@ -69,17 +69,17 @@ export default function PricingCard() {
         className="border border-[#D10800] p-6 rounded-xl flex flex-col bg-neutral-900 w-[389.33px] h-full "
       >
         {/* Top content */}
-        <div>
-          <h2 className="text-[20px] font-bold mb-2">{pack.title}</h2>
+        <div className='flex  flex-col justify-between h-full'>
+          <div>
+
+            <h2 className="text-[20px] font-bold mb-2">{pack.title}</h2>
           {pack .crossprice && (
-            <div className='flex gap-1'>
-            <div className=" text-sm text-white line-through mb-2 flex">
-              {pack.crossprice} 
+            
+            <div className=" text-sm text-red-500 line-through mb-2 flex">
+              {pack.crossprice}$
               </div>
-              <div>
-                $
-              </div>
-              </div>
+              
+            
           )}
           <div className="text-[px] font-bold text-[20px] mb-1">{pack.price}</div>
           {pack.badge && (
@@ -91,8 +91,11 @@ export default function PricingCard() {
             Get started
           </button>
           </div>
+          </div>
 
-          {/* Features and Benefits */}
+          <div>
+
+            {/* Features and Benefits */}
           {pack.benifits && (
             <p className="text-sm mb-3 mt-3">{pack.benifits}</p>
           )}
@@ -104,6 +107,7 @@ export default function PricingCard() {
               </li>
             ))}
           </ul>
+          </div>
         </div>
 
         {/* Bottom section — pinned to bottom */}
