@@ -88,15 +88,15 @@ export default function PricingCard() {
         {packages.map((pack) => (
           <div
             key={pack.id}
-            className="border border-[#D10800] p-6  flex flex-col bg-neutral-900 md:w-[389px] md:h-[996px] w-[300px] h-[996px] pt-[24px] pb-[16px] pr-[16px] pl-[10px] gap-[18px] rounded-xl  "
+            className="border border-[#D10800] p-6  flex flex-col bg-neutral-900   pt-[24px] pb-[16px] pr-[16px] pl-[10px] gap-[18px] rounded-xl  max-w-96 "
           >
-           <div className='md:w-[314px] md:h-[183px]  text-[32px] pr-5 '>
+           <div className=' text-[32px] pr-5  w-80'>
 
-             <h2 className="w-[286px] h-[23px] font-bold mb-2 text-[20px]">{pack.title}</h2>
+             <h2 className=" font-bold mb-2 text-[20px]">{pack.title}</h2>
 
            
 
-           <div className='w-[298px] md:h-[79px] h-[136px] pr-[8px] text-[32px] gap-[17px] mt-8'>
+           <div className=' pr-[8px] text-[32px] gap-[17px] mt-8'>
              {/* Cross price */}
             {pack.crossprice && (
               <div className=" font-bold text-[20px] text-white line-through decoration-[#D10800] mb-1 ">
@@ -116,7 +116,7 @@ export default function PricingCard() {
 
            </div>
             {/* Button */}
-            <button className="md:w-[357.33px] h-[42px] text-[16px]  bg-[#D10800] hover:bg-red-700 text-white font-semibold py-2 rounded mb-4 md:mt-10 mt-[40px]">
+            <button className="  text-[16px]  bg-[#D10800] hover:bg-red-700 text-white font-semibold py-2 rounded mb-4 md:mt-10 mt-[40px]">
               Get started
             </button>
 
