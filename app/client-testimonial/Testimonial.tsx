@@ -12,7 +12,7 @@ export default function Testimonial() {
         {/* Testimonials container */}
         <div className="flex flex-wrap justify-center gap-40 pl-32">
           {/* First Testimonial Card — always visible */}
-          <div className="relative w-[312px] h-[636px] flex items-center ">
+          <div className="relative md:w-[312px] md:h-[636px] flex items-center ">
             <div className="p-2 border rounded-3xl border-white">
               <div className="border rounded-3xl p-1 border-black">
                 <Image
