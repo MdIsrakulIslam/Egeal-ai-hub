@@ -70,7 +70,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
         </h2>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl  mx-auto ">
           {reviews.map((review) => (
             <div
               key={review.id}
@@ -82,12 +82,12 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
               </div>
 
               {/* Review Text */}
-              <p className="text-gray-300 mb-4 font-normal text-[15px] leading-[24px] tracking-[0px] p-2">
+              <p className="text-[#FFFFFF] mb-4 font-normal text-[15px] leading-[24px] tracking-[0px] ">
                 "{review.text}"
               </p>
 
               {/* Author */}
-              <p className="text-gray-400 text-sm sm:text-base font-medium mb-2 p-2">
+              <p className="text-[#FFFFFF] text-sm sm:text-base font-medium ">
                 — {review.author}
               </p>
             </div>
